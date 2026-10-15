@@ -1,0 +1,26 @@
+<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+<%
+String ctx = request.getContextPath();
+String pageTitle = (String) request.getAttribute("pageTitle");
+if (pageTitle == null) pageTitle = "PetCare";
+String flashMessage = (String) session.getAttribute("flashMessage");
+String flashType = (String) session.getAttribute("flashType");
+session.removeAttribute("flashMessage"); session.removeAttribute("flashType");
+%>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title><%= pageTitle %> | PetCare</title>
+<link rel="stylesheet" href="<%=ctx%>/assets/css/style.css">
+</head>
+<body>
+<header class="topbar"><a class="brand" href="<%=ctx%>/dashboard"><span class="brand-mark">♥</span> PetCare</a>
+<nav>
+<% if (session.getAttribute("userId") != null) { %>
+<a href="<%=ctx%>/dashboard">Dashboard</a><a href="<%=ctx%>/pets">My Pets</a><a href="<%=ctx%>/appointments">Appointments</a><a href="<%=ctx%>/medical">Medical</a><a href="<%=ctx%>/vaccinations">Vaccinations</a><a href="<%=ctx%>/services">Services</a><a class="nav-logout" href="<%=ctx%>/logout">Log out</a>
+<% } %>
+</nav></header>
+<main class="container">
+<% if (flashMessage != null) { %><div class="alert <%= "success".equals(flashType) ? "alert-success" : "alert-error" %>"><%= flashMessage %></div><% } %>
+<% if (request.getAttribute("errorMessage") != null) { %><div class="alert alert-error"><%= request.getAttribute("errorMessage") %></div><% } %>

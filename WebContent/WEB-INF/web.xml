@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="http://java.sun.com/xml/ns/javaee" version="3.0">
+  <display-name>PetCareManagementSystem</display-name>
+  <welcome-file-list><welcome-file>home</welcome-file></welcome-file-list>
+  <filter><filter-name>AuthFilter</filter-name><filter-class>com.petcare.filter.AuthFilter</filter-class></filter>
+  <filter-mapping><filter-name>AuthFilter</filter-name><url-pattern>/*</url-pattern></filter-mapping>
+  <servlet><servlet-name>HomeServlet</servlet-name><servlet-class>com.petcare.servlet.HomeServlet</servlet-class></servlet>
+  <servlet-mapping><servlet-name>HomeServlet</servlet-name><url-pattern>/home</url-pattern></servlet-mapping>
+  <servlet><servlet-name>AuthServlet</servlet-name><servlet-class>com.petcare.servlet.AuthServlet</servlet-class></servlet>
+  <servlet-mapping><servlet-name>AuthServlet</servlet-name><url-pattern>/login</url-pattern></servlet-mapping>
+  <servlet-mapping><servlet-name>AuthServlet</servlet-name><url-pattern>/register</url-pattern></servlet-mapping>
+  <servlet-mapping><servlet-name>AuthServlet</servlet-name><url-pattern>/logout</url-pattern></servlet-mapping>
+  <servlet><servlet-name>DashboardServlet</servlet-name><servlet-class>com.petcare.servlet.DashboardServlet</servlet-class></servlet>
+  <servlet-mapping><servlet-name>DashboardServlet</servlet-name><url-pattern>/dashboard</url-pattern></servlet-mapping>
+  <servlet><servlet-name>PetServlet</servlet-name><servlet-class>com.petcare.servlet.PetServlet</servlet-class></servlet>
+  <servlet-mapping><servlet-name>PetServlet</servlet-name><url-pattern>/pets</url-pattern></servlet-mapping>
+  <servlet><servlet-name>ServiceServlet</servlet-name><servlet-class>com.petcare.servlet.ServiceServlet</servlet-class></servlet>
+  <servlet-mapping><servlet-name>ServiceServlet</servlet-name><url-pattern>/services</url-pattern></servlet-mapping>
+  <servlet><servlet-name>AppointmentServlet</servlet-name><servlet-class>com.petcare.servlet.AppointmentServlet</servlet-class></servlet>
+  <servlet-mapping><servlet-name>AppointmentServlet</servlet-name><url-pattern>/appointments</url-pattern></servlet-mapping>
+  <servlet><servlet-name>MedicalServlet</servlet-name><servlet-class>com.petcare.servlet.MedicalServlet</servlet-class></servlet>
+  <servlet-mapping><servlet-name>MedicalServlet</servlet-name><url-pattern>/medical</url-pattern></servlet-mapping>
+  <servlet><servlet-name>VaccinationServlet</servlet-name><servlet-class>com.petcare.servlet.VaccinationServlet</servlet-class></servlet>
+  <servlet-mapping><servlet-name>VaccinationServlet</servlet-name><url-pattern>/vaccinations</url-pattern></servlet-mapping>
+  <session-config><session-timeout>30</session-timeout></session-config>
+</web-app>

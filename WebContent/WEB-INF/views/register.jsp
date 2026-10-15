@@ -1,0 +1,6 @@
+<%@ include file="partials/header.jspf" %>
+<section class="auth-layout"><div class="auth-intro"><div class="eyebrow">GET STARTED</div><h1>Better care<br><span>starts here.</span></h1><p>Create an account to keep your pet information organized and make appointment details easier to retrieve.</p><div class="note-box">Your password is stored as a salted PBKDF2 hash, not as readable text.</div></div>
+<div class="auth-card"><div class="eyebrow">CREATE YOUR ACCOUNT</div><h2>Join PetCare</h2><p class="muted">All fields marked with * are required.</p>
+<form method="post" action="<%=ctx%>/register" class="form-stack"><label>Full name *<input name="fullName" required minlength="2" maxlength="100" autocomplete="name"></label><label>Email address *<input type="email" name="email" required maxlength="150" autocomplete="email"></label><label>Phone number<input name="phone" maxlength="25" autocomplete="tel"></label><label>Password *<input type="password" name="password" required minlength="8" autocomplete="new-password"><small>At least 8 characters.</small></label><button class="btn btn-primary" type="submit">Create account <span>→</span></button></form>
+<p class="auth-switch">Already registered? <a href="<%=ctx%>/login">Sign in</a></p></div></section>
+<%@ include file="partials/footer.jspf" %>
